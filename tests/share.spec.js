@@ -133,7 +133,6 @@ describe('ShareBar - Methods Test Case', function () {
                 'twitter',
                 'whatsapp',
                 'telegram',
-                'google',
                 'linkedin',
                 'pinterest',
                 'email'
@@ -179,7 +178,7 @@ describe('ShareBar - Methods Test Case', function () {
             expect(
                 function () {self.newBar.validateNetworks(['facebrrk']); }
             ).toThrow(
-                new Error('The list of networks passed on initialization is wrong [Network name "facebrrk" is wrong, should be facebook or twitter or whatsapp or google or linkedin or pinterest or email]')
+                new Error('The list of networks passed on initialization is wrong [Network name "facebrrk" is wrong, should be facebook or twitter or whatsapp or linkedin or pinterest or email]')
             );
         });
 
@@ -736,23 +735,6 @@ describe('ShareBar - Methods Test Case', function () {
             link = this.el.querySelector('.share-button.share-twitter a');
             expect(link.href).toEqual(
                 'https://twitter.com/share?url=http%3A%2F%2Fglobo.com%3Futm_source%3Dtwitter%26utm_medium%3Dshare-bar-desktop%26utm_campaign%3Dshare-bar&text=Test%20title%20%23test%20%23g1'
-            );
-        });
-    });
-
-    describe('createGoogleButton', function () {
-        it('should create googleplus button', function () {
-            this.newBar.createGoogleButton(this.el);
-            expect(this.el.querySelector('.share-button.share-googleplus a.share-popup span')).not.toBe(null);
-        });
-
-        it('should set link href with metadata of container', function () {
-            var link = '';
-            this.newBar.createGoogleButton(this.el);
-
-            link = this.el.querySelector('.share-button.share-googleplus a');
-            expect(link.href).toEqual(
-                'https://plus.google.com/share?url=http%3A%2F%2Fglobo.com%3Futm_source%3Dgoogleplus%26utm_medium%3Dshare-bar-desktop%26utm_campaign%3Dshare-bar'
             );
         });
     });

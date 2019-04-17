@@ -12,7 +12,6 @@ function ShareBar(options) {
         TWITTER = 'twitter',
         WHATSAPP = 'whatsapp',
         TELEGRAM = 'telegram',
-        GOOGLE = 'google',
         LINKEDIN = 'linkedin',
         PINTEREST = 'pinterest',
         EMAIL = 'email',
@@ -130,7 +129,7 @@ function ShareBar(options) {
                     classPopup: 'share-popup',
                     facebookAppId: '',
                     networks: [
-                        FACEBOOK, TWITTER, WHATSAPP, TELEGRAM, GOOGLE, LINKEDIN, PINTEREST, EMAIL
+                        FACEBOOK, TWITTER, WHATSAPP, TELEGRAM, LINKEDIN, PINTEREST, EMAIL
                     ],
                     theme: 'natural',
                     buttonWidth: BUTTON_WIDTH,
@@ -177,7 +176,7 @@ function ShareBar(options) {
 
                         networks[i] = method;
                     } else {
-                        throw new Error(msg + ' [Network name "' + networks[i] + '" is wrong, should be ' + FACEBOOK + ' or ' + TWITTER + ' or ' + WHATSAPP + ' or ' + GOOGLE + ' or ' + LINKEDIN + ' or ' + PINTEREST + ' or ' + EMAIL + ']');
+                        throw new Error(msg + ' [Network name "' + networks[i] + '" is wrong, should be ' + FACEBOOK + ' or ' + TWITTER + ' or ' + WHATSAPP + ' or ' + LINKEDIN + ' or ' + PINTEREST + ' or ' + EMAIL + ']');
                     }
 
                 } else if (typeof networks[i] !== 'function') {
@@ -467,18 +466,6 @@ function ShareBar(options) {
                 TWITTER,
                 buttonClass,
                 'https://twitter.com/share?url=' + data.url + '&amp;text=' + data.title + ' ' + data.hashtags
-            );
-        },
-
-        createGoogleButton: function createGoogleButton(container, buttonClass) {
-            var data = this.getMetadataFromElement(container);
-
-            this.createButton(
-                container,
-                GOOGLE + 'plus',
-                buttonClass,
-                'https://plus.google.com/share?url=' + data.url,
-                GOOGLE + '+'
             );
         },
 
