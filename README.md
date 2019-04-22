@@ -59,10 +59,10 @@ new ShareBar({'facebookAppId': 'APP_ID'});
 Also, place the following markup where you want the share-bar to be:
 
 ```html
-<div class="share-bar" 
-    data-title="Content Title" 
-    data-url="Content URL" 
-    data-image-url="http://lorempixel.com/1080/700/" 
+<div class="share-bar"
+    data-title="Content Title"
+    data-url="Content URL"
+    data-image-url="http://lorempixel.com/1080/700/"
     data-hashtags="#example #sharebar">
 </div>
 ```
@@ -154,7 +154,7 @@ Default:
   'facebook',
   'twitter',
   'whatsapp',
-  'google',
+  'telegram',
   'linkedin',
   'pinterest',
   'email'
@@ -211,8 +211,8 @@ Default: `function (bar) { return false; }`
 
 ```javascript
 new ShareBar({
-  onCreateBar: function (bar) { 
-    alert(bar.innerHTML); 
+  onCreateBar: function (bar) {
+    alert(bar.innerHTML);
   }
 });
 ```
@@ -225,8 +225,8 @@ Default: `function (button) { return false; }`
 
 ```javascript
 new ShareBar({
-  onCreateBar: function (button) { 
-    alert(button.innerHTML); 
+  onCreateBar: function (button) {
+    alert(button.innerHTML);
   }
 });
 ```
@@ -239,8 +239,8 @@ Default: `function (button) { return false; }`
 
 ```javascript
 new ShareBar({
-  onShare: function (button) { 
-    alert(button.innerHTML); 
+  onShare: function (button) {
+    alert(button.innerHTML);
   }
 });
 ```
